@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { onMounted } from 'vue'
 
+/*array de objetos com os posts*/
 const posts = ref([
   {
     id: 1,
@@ -45,7 +47,7 @@ const posts = ref([
     href: '#',
   },
 ])
-
+/*array caminho dos icones*/
 const icons = ref([
   'src/assets/peso.png',
   'src/assets/forca.png',
@@ -57,6 +59,7 @@ const icons = ref([
 
 const visibleIndex = ref(0)
 
+/*metodos para o carrosel */
 const nextSlide = () => {
   visibleIndex.value = (visibleIndex.value + 3) % posts.value.length
 }
@@ -64,10 +67,17 @@ const nextSlide = () => {
 const prevSlide = () => {
   visibleIndex.value = (visibleIndex.value - 3 + posts.value.length) % posts.value.length
 }
+/*funcao para alerta ao clicar no botao*/
+onMounted(() => {
+  const buttons = document.querySelectorAll('#alertaBotao')
+  buttons.forEach(button => {
+    button.addEventListener('click', () => alert('Botão clicado, teste os outros botoes!'))
+  })
+})
 </script>
-
 <template>
   <div class="bg-gradient">
+    <!--cabecalho de navegacao-->
     <header class="h-full">
       <div class="flex items-center justify-between px-6 py-4 container mx-auto">
         <div>
@@ -76,17 +86,17 @@ const prevSlide = () => {
 
         <nav class="flex flex-grow justify-center">
           <ul class="flex space-x-6 text-branco mt-5 font-bold">
-            <li><a href="#home" class="btn">Home</a></li>
-            <li><a href="#about" class="btn">Program</a></li>
-            <li><a href="#services" class="btn">Service</a></li>
-            <li><a href="#contact" class="btn">About</a></li>
-            <li><a href="#community" class="btn">Community</a></li>
+            <li><a id="alertaBotao" href="#home" class="btn">Home</a></li>
+            <li><a id="alertaBotao" href="#about" class="btn">Program</a></li>
+            <li><a id="alertaBotao" href="#services" class="btn">Service</a></li>
+            <li><a id="alertaBotao" href="#contact" class="btn">About</a></li>
+            <li><a id="alertaBotao" href="#community" class="btn">Community</a></li>
           </ul>
         </nav>
 
-        <a href="#dourado" class="goldButton mt-3">Join Now</a>
+        <a id="alertaBotao" href="#dourado" class="goldButton mt-3">Join Now</a>
       </div>
-
+      <!--primeira sessao com enunciado e modelo-->
       <div class="flex flex-wrap h-96 container mr-10 mx-auto mt-24 px-6">
         <div class="w-full sm:w-1/2 mb-6 sm:mb-0">
           <div class="letraDourada">BEST FITNESS IN THE TOWN</div>
@@ -105,7 +115,7 @@ const prevSlide = () => {
             reprehenderit dolor.
           </div>
 
-          <button class="goldButton mt-8">Get Started</button>
+          <button id="alertaBotao" class="goldButton mt-8">Get Started</button>
         </div>
 
         <div class="flex items-center justify-center w-full sm:w-1/2">
@@ -114,6 +124,7 @@ const prevSlide = () => {
       </div>
     </header>
 
+    <!--apresentação dos cards de treinos com setas para navegar entre eles-->
     <div class="flex flex-row justify-between mx-80 mt-40">
       <div class="explore">EXPLORE YOUR PROGRAM</div>
       <div class="flex flex-row">
@@ -135,7 +146,7 @@ const prevSlide = () => {
         />
       </div>
     </div>
-
+    <!--carrosel de cards de treinos-->
     <div class="flex flex-row justify-between mx-80 mt-10">
       <div class="pb-24 w-full">
         <div class="mx-auto max-w-7xl">
@@ -160,7 +171,7 @@ const prevSlide = () => {
                 <p class="mt-5 line-clamp-3 text-sm/6 text-branco">{{ post.description }}</p>
               </div>
               <div class="relative mt-8 flex items-center gap-x-4">
-                <button class="goldButton">Join Now</button>
+                <button id="alertaBotao" class="goldButton">Join Now</button>
               </div>
             </article>
           </div>
@@ -168,6 +179,7 @@ const prevSlide = () => {
       </div>
     </div>
 
+    <!--sessao com imagem e texto-->
     <div class="flex flex-row container ml-60 mt-10">
       <div class="w-1/2 relative h-full mr-20">
         <img class="absolute ps-44" src="../assets/ropeMen.jpg" alt="men2" />
@@ -181,11 +193,12 @@ const prevSlide = () => {
           dolor.
         </div>
         <div>
-          <button class="goldButton mt-8">Book a Class</button>
+          <button id="alertaBotao" class="goldButton mt-8">Book a Class</button>
         </div>
       </div>
     </div>
-    <footer class="container mx-auto mt-10 grid grid-cols-4 gap-8 px-8 py-10 bg-gray-900 text-white">
+    <!--rodape-->
+    <footer class="container mx-auto mt-10 grid grid-cols-4 gap-8 px-8 py-10 mr-10 text-white">
       <div>
         <img src="@/assets/logo.png" alt="Logo da Empresa" class="w-32 sm:w-40 md:w-48" />
         <p class="pt-4 text-gray-400">
@@ -233,7 +246,7 @@ const prevSlide = () => {
         </ul>
       </div>
       <nav>
-        <h3 class="cabecalho">Company</h3>
+        <h3 class="rodape">Company</h3>
         <ul>
           <li>Business</li>
           <li>Franchise</li>
@@ -243,7 +256,7 @@ const prevSlide = () => {
       </nav>
 
       <nav>
-        <h3 class="cabecalho">About Us</h3>
+        <h3 class="rodape">About Us</h3>
         <ul>
           <li>Blogs</li>
           <li>Security</li>
@@ -251,7 +264,7 @@ const prevSlide = () => {
         </ul>
       </nav>
       <nav>
-        <h3 class="cabecalho">Contact</h3>
+        <h3 class="rodape">Contact</h3>
         <ul>
           <li>Contact Us</li>
           <li>Privacy Policy</li>
@@ -264,7 +277,7 @@ const prevSlide = () => {
 </template>
 
 <style scoped>
-.cabecalho {
+.rodape {
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -272,7 +285,7 @@ const prevSlide = () => {
   margin-bottom: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.cabecalho + ul > li {
+.rodape + ul > li {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem /* 8px */ * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem /* 8px */ * var(--tw-space-y-reverse));
@@ -459,9 +472,6 @@ const prevSlide = () => {
   font-size: 16px;
   font-weight: bold;
   border-radius: 10px;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
   cursor: pointer;
 }
 </style>
