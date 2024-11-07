@@ -87,7 +87,7 @@ const prevSlide = () => {
         <a href="#dourado" class="goldButton mt-3">Join Now</a>
       </div>
 
-      <div class="flex flex-wrap w-full h-96 container mx-auto mt-24 px-6 md:px-16">
+      <div class="flex flex-wrap h-96 container mr-10 mx-auto mt-24 px-6">
         <div class="w-full sm:w-1/2 mb-6 sm:mb-0">
           <div class="letraDourada">BEST FITNESS IN THE TOWN</div>
           <div class="flex flex-row w-full">
