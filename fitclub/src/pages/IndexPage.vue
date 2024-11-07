@@ -71,7 +71,7 @@ const prevSlide = () => {
     <header class="h-full">
       <div class="flex items-center justify-between px-6 py-4 container mx-auto">
         <div>
-          <img src="@/assets/logo.png" alt="logo" class="w-100" />
+          <img src="@/assets/logo.png" alt="logo" class="w-32 sm:w-40 md:w-48" />
         </div>
 
         <nav class="flex flex-grow justify-center">
@@ -87,8 +87,8 @@ const prevSlide = () => {
         <a href="#dourado" class="goldButton mt-3">Join Now</a>
       </div>
 
-      <div class="flex flex-row w-full h-96 container mx-80 mt-24">
-        <div class="w-1/2">
+      <div class="flex flex-wrap w-full h-96 container mx-auto mt-24 px-6 md:px-16">
+        <div class="w-full sm:w-1/2 mb-6 sm:mb-0">
           <div class="letraDourada">BEST FITNESS IN THE TOWN</div>
           <div class="flex flex-row w-full">
             <div class="make w-1/2">MAKE</div>
@@ -108,11 +108,12 @@ const prevSlide = () => {
           <button class="goldButton mt-8">Get Started</button>
         </div>
 
-        <div class="flex items-center justify-center w-1/2">
+        <div class="flex items-center justify-center w-full sm:w-1/2">
           <img src="@/assets/mem.png" alt="imagem" class="w-full max-w-[300px] h-auto" />
         </div>
       </div>
     </header>
+
     <div class="flex flex-row justify-between mx-80 mt-40">
       <div class="explore">EXPLORE YOUR PROGRAM</div>
       <div class="flex flex-row">
@@ -134,6 +135,7 @@ const prevSlide = () => {
         />
       </div>
     </div>
+
     <div class="flex flex-row justify-between mx-80 mt-10">
       <div class="pb-24 w-full">
         <div class="mx-auto max-w-7xl">
@@ -162,6 +164,24 @@ const prevSlide = () => {
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row container ml-60 mt-10">
+      <div class="w-1/2 relative h-full mr-20">
+        <img class="absolute ps-44" src="../assets/ropeMen.jpg" alt="men2" />
+        <img class="absolute mt-80" src="../assets/bustMen.jpg" alt="men1" />
+      </div>
+      <div class="w-1/2 h-full pb-80">
+        <div class="letraBrancaGrande">THE CLASS YOU WILL GET HERE</div>
+        <div class="text-white mt-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, beatae nulla animi aliquid suscipit ab id quam
+          voluptatem, consequuntur laudantium, ducimus et unde. Ex, exercitationem excepturi hic saepe reprehenderit
+          dolor.
+        </div>
+        <div>
+          <button class="goldButton mt-8">Book a Class</button>
         </div>
       </div>
     </div>
